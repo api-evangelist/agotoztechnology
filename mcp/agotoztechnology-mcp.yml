@@ -1,0 +1,30 @@
+generated: '2026-09-12'
+method: probed
+status: none
+source: >-
+  DNS and HTTP probes on 2026-09-12 against mcp.agotoz.com, openapi.agotoz.com/mcp and
+  www.agotoz.com/mcp, plus a web search for a published AgotoZ MCP server or stdio package.
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+server: null
+tools: []
+probes:
+- url: https://mcp.agotoz.com/mcp
+  method: POST tools/list
+  result: DNS returns no record — the host does not resolve
+- url: http://openapi.agotoz.com/mcp
+  method: POST tools/list
+  status: 403
+  result: >-
+    nginx returns the same blanket 403 Forbidden it returns for every other path on this host
+- url: https://www.agotoz.com/mcp
+  method: POST tools/list
+  status: 404
+  result: marketing site 404
+note: >-
+  AgotoZ ships no hosted MCP server and no stdio MCP package, and there is no public OpenAPI
+  from which a candidate tool list could be derived, so no candidate tools are listed here.
+  mode is none and NO MCPServer pointer is emitted in apis.yml. This file records that the
+  probe ran and missed.

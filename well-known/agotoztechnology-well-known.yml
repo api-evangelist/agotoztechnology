@@ -1,0 +1,151 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  Anonymous HTTP probe of the nine named /.well-known/ paths on every AgotoZ host discovered
+  in this pass — the marketing site (www.agotoz.com), the apex (agotoz.com), the static asset
+  host (static.agotoz.com), the gated API host (openapi.agotoz.com) and the portal login host
+  (portal.agotoz.com) — 2026-09-12.
+summary: >-
+  AgotoZ serves no /.well-known/ discovery document on any host. The marketing site and the
+  static asset host return genuine 404s for every path including a nonsense control probe; the
+  portal login host returns a genuine nginx 404 for every path; the openapi host returns a
+  blanket nginx 403 for every path, control probe included, so nothing there is observable
+  anonymously; and the bare apex agotoz.com does not resolve in DNS at all — only www does.
+  No security.txt, no OpenID/OAuth metadata, no api-catalog, no ai-plugin, no agent card.
+  Because every path missed, NO WellKnown and NO SecurityTxt pointer is emitted in apis.yml.
+hit_count: 0
+soft_404_control:
+  note: >-
+    A deliberate nonsense path (/.well-known/zzz-control-probe-9182) was requested on every
+    host. On every host it returned the same status code and the same response body hash as
+    the eight real well-known paths, which confirms the responses are host-wide defaults and
+    not per-document answers. No host answered 200 to any well-known path, so there is no
+    SPA catch-all false positive to discount here.
+  probes:
+  - host: https://www.agotoz.com
+    path: /.well-known/zzz-control-probe-9182
+    status: 404
+    bytes: 17563
+    body_sha256_prefix: 07de70fa39f0
+  - host: https://static.agotoz.com
+    path: /.well-known/zzz-control-probe-9182
+    status: 404
+    bytes: 564
+    body_sha256_prefix: 0b52c5338af3
+  - host: http://openapi.agotoz.com
+    path: /.well-known/zzz-control-probe-9182
+    status: 403
+    bytes: 571
+    body_sha256_prefix: 14e1badf45cb
+  - host: http://portal.agotoz.com
+    path: /.well-known/zzz-control-probe-9182
+    status: 404
+    bytes: 571
+    body_sha256_prefix: f1fcb9aeff61
+hosts:
+- host: https://www.agotoz.com
+  note: >-
+    AgotoZ marketing site. Genuine 404s — the 17,563-byte body is the site's own 404 page and
+    is returned with a real 404 status.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://agotoz.com
+  note: >-
+    The bare apex does not resolve — DNS returns no A record. Only the www host is published.
+    Recorded as a measured absence, not a probe failure of ours.
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/oauth-protected-resource
+    status: 0
+  - path: /.well-known/api-catalog
+    status: 0
+  - path: /.well-known/ai-plugin.json
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+- host: https://static.agotoz.com
+  note: Static asset CDN host for the marketing site. Genuine nginx 404s.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: http://openapi.agotoz.com
+  note: >-
+    AgotoZ's own API host. nginx/1.14.0 returns an identical 571-byte 403 Forbidden for every
+    path. Nothing is readable anonymously, so absence here is a gate, not a measurement of
+    what the host serves to an authorized caller. Probed over port 80 because port 443
+    completes the TLS handshake but returns no HTTP response to an anonymous client.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: http://portal.agotoz.com
+  note: >-
+    "agotz portal" — a PHP username/password/captcha login page served by nginx/1.12.1. It is
+    not linked from anywhere on the public site and its port 443 certificate has expired, so it
+    was probed over port 80. Genuine 404s for every well-known path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

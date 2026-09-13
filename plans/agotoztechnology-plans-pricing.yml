@@ -1,0 +1,35 @@
+generated: '2026-09-12'
+method: searched
+source: >-
+  Full walk of every page linked from the AgotoZ site navigation in both the Chinese and
+  English locales — home, About, the eight product pages (ALLWAN, Linker CPE, global integrated
+  CDN, cloud service, cloud connection, global data center, SASE, DDoS protection, Lingyin
+  LinkTo) and the six solution pages — plus direct probes for a pricing page, 2026-09-12.
+plan_count: 0
+plans: []
+pricing_model: enterprise-contact-sales
+evidence:
+- url: https://www.agotoz.com/views/home
+  status: 200
+  note: >-
+    The site has no pricing entry in its navigation at all. The only conversion element on
+    every page is a 免费咨询 / "online trial" form that POSTs to /api/try and collects a name,
+    company and contact detail for a sales follow-up.
+- url: https://www.agotoz.com/views/product/allwan
+  status: 200
+  note: >-
+    The ALLWAN flagship NaaS product page states capabilities and coverage but no tier, price,
+    bandwidth quota, commit or overage. Its CTA scrolls to the same trial-request form.
+- url: https://www.agotoz.com/views/product/sase
+  status: 200
+  note: same shape — capability copy, no commercial terms
+- url: https://www.agotoz.com/views/about
+  status: 200
+  note: >-
+    Commercial contact is by email only (xiaoshou@agotoz.com for sales, service@agotoz.com for
+    service) plus a Beijing phone number.
+note: >-
+  AgotoZ publishes no plans, tiers, prices, quotas or overage terms of any kind. ALLWAN, the
+  CPE gateways, CDN, cloud, SASE, DDoS protection and data centre services are all sold through
+  a trial-request form and a sales conversation. This is a measured zero, not an unchecked
+  field. NO Pricing pointer is emitted in apis.yml because there is no pricing page to point at.

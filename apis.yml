@@ -1,23 +1,136 @@
 aid: agotoztechnology
-name: Agotoztechnology
-description: 'Agotoztechnology is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: AgotoZ Technology
+description: >-
+  AgotoZ Technology (观脉科技 / Agotoz Technology (Beijing) Co., Ltd.) is a Beijing-headquartered
+  network-as-a-service provider, registered in 2016 and in commercial operation since 2017, that
+  builds and operates ALLWAN — a self-built global SD-WAN overlay network the company says reaches
+  more than 70 countries and regions — alongside the Linker and Linker Pro CPE intelligent access
+  gateways, a global integrated CDN, cloud connection and one-stop public cloud services, SASE
+  dynamic secure access, DDoS protection, worldwide data centre and co-location resources, and the
+  Lingyin LinkTo real-time transmission service. Its stack applies layer 2 through layer 7 SD-WAN
+  technology — VxLAN, millisecond-scale global dynamic routing, single- and bilateral TCP/UDP
+  acceleration, efficient data compression and high-performance caching — to low-latency enterprise
+  interconnect and application acceleration for gaming, VR/AR/MR, online education, audio and video
+  conferencing, and internet companies. AgotoZ states it holds full MIIT telecommunications licences
+  (A24-1, B11, B12, B13, B14), is a Chinese National High-tech Enterprise, and has served more than
+  200 global internet companies; it has raised roughly $57M from Legend Capital, SIG China, CICC
+  Capital and NGP Capital, and runs offices in Beijing, Shanghai, Singapore and Hong Kong. The
+  company sells through a trial-request and sales motion and publishes no developer portal, API
+  reference, SDK or machine-readable contract of any kind, though it does operate a
+  credential-gated API host of its own at openapi.agotoz.com.
+image: https://static.agotoz.com/images/01home/black-logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/agotoztechnology/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-12'
 modified: '2026-09-12'
 tags:
-- Company
-apis: []
+- SD-WAN
+- Network as a Service
+- Network Acceleration
+- Enterprise Networking
+- Content Delivery Network
+- SASE
+- DDoS Protection
+- Cloud Connectivity
+- Data Center
+- Telecommunications
+apis:
+- aid: agotoztechnology:agotoz-openapi
+  name: AgotoZ OpenAPI Host (gated)
+  description: >-
+    A first-party API host AgotoZ operates on its own registrable domain at openapi.agotoz.com,
+    named for an open API surface and serving a valid wildcard *.agotoz.com TLS certificate. It is
+    not reachable anonymously: over port 80 an nginx/1.14.0 instance answers EVERY path — the root,
+    /openapi.json, /swagger.json, /v2/api-docs, /graphql, /mcp and every /.well-known/* path alike,
+    including a nonsense control path — with an identical 571-byte HTTP 403 Forbidden page, and over
+    port 443 the TLS handshake completes (TLSv1.2, ALPN h2 accepted) but no HTTP response is returned
+    to an anonymous caller within 25 seconds. AgotoZ publishes no reference, no specification and no
+    authentication documentation for this host anywhere on its public site, so no operations,
+    parameters, authentication scheme or rate limits are recorded here. Listed as a measured, gated
+    surface — its existence is evidence; its contract is not public.
+  humanURL: https://www.agotoz.com/views/product/allwan
+  baseURL: https://openapi.agotoz.com
+  image: https://static.agotoz.com/images/01home/black-logo.svg
+  tags:
+  - SD-WAN
+  - Network as a Service
+  - Enterprise Networking
+  properties: []
+  x-access: gated
+  x-evidence:
+    discovered: '2026-09-12'
+    method: probed
+    source: DNS resolution of openapi.agotoz.com plus anonymous HTTP/HTTPS probes, 2026-09-12
+    probes:
+    - url: http://openapi.agotoz.com/
+      status: 403
+    - url: http://openapi.agotoz.com/openapi.json
+      status: 403
+    - url: http://openapi.agotoz.com/swagger.json
+      status: 403
+    - url: http://openapi.agotoz.com/v2/api-docs
+      status: 403
+    - url: http://openapi.agotoz.com/graphql
+      status: 403
+    - url: http://openapi.agotoz.com/mcp
+      status: 403
+    - url: http://openapi.agotoz.com/.well-known/zzz-control-probe-9182
+      status: 403
+      note: control probe — identical body hash to every real path, so the 403 is blanket
+    - url: https://openapi.agotoz.com/
+      status: 0
+      note: TLS handshake succeeds with CN=*.agotoz.com; no HTTP response within 25s
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/agotoztechnology-domain-security.yml
 - type: Website
+  url: https://www.agotoz.com/
+- type: Blog
+  url: https://www.agotoz.com/views/news/list
+- type: LinkedIn
+  url: https://www.linkedin.com/company/agotoz
+- type: LLMsTxt
+  url: llms/agotoztechnology-llms.txt
+- type: Plans
+  url: plans/agotoztechnology-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/agotoztechnology-rate-limits.yml
+- type: x-secondary-market-listing
   url: https://equityzen.com/company/agotoztechnology
+x-enrichment:
+  date: '2026-09-12'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    AgotoZ runs a first-party API host on its own domain at openapi.agotoz.com under a valid
+    wildcard *.agotoz.com certificate, but nginx answers every anonymous request to it —
+    /openapi.json, /swagger.json, /v2/api-docs, /graphql, /mcp, every /.well-known/* path and a
+    nonsense control path alike — with the same 571-byte HTTP 403 Forbidden, while the public
+    site carries no developer section at all: its navigation runs home, products, solutions,
+    news and about, and every product page ends at one 免费咨询 trial-request form and the
+    sales address xiaoshou@agotoz.com.
+  evidence:
+  - url: http://openapi.agotoz.com/openapi.json
+    status: 403
+  - url: http://openapi.agotoz.com/.well-known/zzz-control-probe-9182
+    status: 403
+  - url: https://openapi.agotoz.com/
+    status: 0
+  - url: https://www.agotoz.com/openapi.json
+    status: 404
+  - url: https://www.agotoz.com/llms.txt
+    status: 404
+  - url: https://www.agotoz.com/views/product/allwan
+    status: 200
+  checked: '2026-09-12'

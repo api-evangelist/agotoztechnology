@@ -1,4 +1,4 @@
-# Agotoztechnology
+# AgotoZ Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,5 +64,21 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Agotoztechnology is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+AgotoZ Technology (观脉科技 / Agotoz Technology (Beijing) Co., Ltd.) is a Beijing-headquartered
+network-as-a-service and SD-WAN provider, registered in 2016 and in commercial operation since 2017.
+It builds and operates ALLWAN, a self-built global SD-WAN overlay the company says reaches more than
+70 countries and regions, alongside Linker CPE access gateways, a global integrated CDN, cloud
+connection and public cloud services, SASE secure access, DDoS protection, worldwide data centre
+resources and the Lingyin LinkTo real-time transmission service.
+
+**API surface (measured 2026-09-12).** AgotoZ publishes no developer portal, API reference, OpenAPI,
+SDK, CLI, webhook catalogue, MCP server or agent card. It does operate a first-party API host on its
+own domain at `openapi.agotoz.com`, serving a valid wildcard `*.agotoz.com` certificate, which
+answers every anonymous request — `/openapi.json`, `/swagger.json`, `/v2/api-docs`, `/graphql`,
+`/mcp`, every `/.well-known/*` path and a nonsense control path alike — with an identical HTTP 403.
+Access to the products runs through a trial-request form and a sales conversation, so this profile
+is recorded as `gated` / `sales-gate`.
+
+- https://www.agotoz.com/
+- https://www.linkedin.com/company/agotoz
 - https://equityzen.com/company/agotoztechnology

@@ -1,0 +1,29 @@
+generated: '2026-09-12'
+method: searched
+source: >-
+  Search of the whole public AgotoZ site for a documented limit, plus anonymous
+  response-header inspection of the gated API host openapi.agotoz.com and the marketing
+  host www.agotoz.com, 2026-09-12.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: null
+evidence:
+- url: http://openapi.agotoz.com/
+  status: 403
+  note: >-
+    nginx/1.14.0 rejects anonymously with a 571-byte 403 page. The response carries no
+    X-RateLimit-*, no RateLimit-* and no Retry-After header, so no runtime rate-limit signal
+    is observable without credentials.
+- url: https://www.agotoz.com/views/home
+  status: 200
+  note: >-
+    No rate-limit headers on the marketing host either. The site's own /api/try contact
+    endpoint does return a code 429 branch in its client-side JavaScript ("操作过于频繁" —
+    "operating too frequently"), but that is the website's contact form, not a product API,
+    and no limit value, window or header is published for it.
+note: >-
+  AgotoZ documents no rate limits anywhere on its public surface — there is no developer
+  portal, no API reference and no published contract in which limits could be stated, and the
+  one live API host refuses anonymous requests outright so no headers can be observed. An
+  honest zero.
