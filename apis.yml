@@ -34,7 +34,7 @@ tags:
 - SASE
 - DDoS Protection
 - Cloud Connectivity
-- Data-Center
+- Data Center
 - Telecommunications
 tags_raw:
 - SD-WAN
@@ -47,6 +47,7 @@ tags_raw:
 - Cloud Connectivity
 - Data Center
 - Telecommunications
+- Data-Center
 apis:
 - aid: agotoztechnology:agotoz-openapi
   name: AgotoZ OpenAPI Host (gated)
