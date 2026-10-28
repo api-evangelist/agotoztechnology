@@ -64,21 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AgotoZ Technology (观脉科技 / Agotoz Technology (Beijing) Co., Ltd.) is a Beijing-headquartered
-network-as-a-service and SD-WAN provider, registered in 2016 and in commercial operation since 2017.
-It builds and operates ALLWAN, a self-built global SD-WAN overlay the company says reaches more than
-70 countries and regions, alongside Linker CPE access gateways, a global integrated CDN, cloud
-connection and public cloud services, SASE secure access, DDoS protection, worldwide data centre
-resources and the Lingyin LinkTo real-time transmission service.
+AgotoZ Technology (观脉科技 / Agotoz Technology (Beijing) Co., Ltd.) is a Beijing-headquartered network-as-a-service provider, registered in 2016 and in commercial operation since 2017, that builds and operates ALLWAN — a self-built global SD-WAN overlay network the company says reaches more than 70 countries and regions — alongside the Linker and Linker Pro CPE intelligent access gateways, a global integrated CDN, cloud connection and one-stop public cloud services, SASE dynamic secure access, DDoS protection, worldwide data centre and co-location resources, and the Lingyin LinkTo real-time transmission service. Its stack applies layer 2 through layer 7 SD-WAN technology — VxLAN, millisecond-scale global dynamic routing, single- and bilateral TCP/UDP acceleration, efficient data compression and high-performance caching — to low-latency enterprise interconnect and application acceleration for gaming, VR/AR/MR, online education, audio and video conferencing, and internet companies. AgotoZ states it holds full MIIT telecommunications licences (A24-1, B11, B12, B13, B14), is a Chinese National High-tech Enterprise, and has served more than 200 global internet companies; it has raised roughly $57M from Legend Capital, SIG China, CICC Capital and NGP Capital, and runs offices in Beijing, Shanghai, Singapore and Hong Kong. The company sells through a trial-request and sales motion and publishes no developer portal, API reference, SDK or machine-readable contract of any kind, though it does operate a credential-gated API host of its own at openapi.agotoz.com.
 
-**API surface (measured 2026-09-12).** AgotoZ publishes no developer portal, API reference, OpenAPI,
-SDK, CLI, webhook catalogue, MCP server or agent card. It does operate a first-party API host on its
-own domain at `openapi.agotoz.com`, serving a valid wildcard `*.agotoz.com` certificate, which
-answers every anonymous request — `/openapi.json`, `/swagger.json`, `/v2/api-docs`, `/graphql`,
-`/mcp`, every `/.well-known/*` path and a nonsense control path alike — with an identical HTTP 403.
-Access to the products runs through a trial-request form and a sales conversation, so this profile
-is recorded as `gated` / `sales-gate`.
+**Areas:** SD-WAN · Network as a Service · Network Acceleration · Enterprise Networking · CDN · SASE · DDoS Protection · Cloud Connectivity · Data Center · Telecommunications
 
-- https://www.agotoz.com/
-- https://www.linkedin.com/company/agotoz
-- https://equityzen.com/company/agotoztechnology
+## AgotoZ Technology on APIs.io
+
+Everything profiled for AgotoZ Technology is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agotoztechnology/](https://apis.io/providers/agotoztechnology/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [AgotoZ OpenAPI Host (gated)](https://apis.io/apis/agotoztechnology/agotoz-openapi/) — A first-party API host AgotoZ operates on its own registrable domain at openapi.agotoz.com, named for an open API surface and serving a valid wildcard…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Agotoztechnology Domain Security](https://apis.io/security/agotoztechnology/agotoztechnology-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Agotoztechnology Plans Pricing](https://apis.io/plans/agotoztechnology/agotoztechnology-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Agotoztechnology Rate Limits](https://apis.io/rate-limits/agotoztechnology/agotoztechnology-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.agotoz.com/)
+- [Blog](https://www.agotoz.com/views/news/list)
+
+## API Evangelist rating
+
+**Kin Score 4.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 0.0 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.0** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agotoztechnology/](https://apis.io/providers/agotoztechnology/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AgotoZ Technology: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agotoztechnology/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
